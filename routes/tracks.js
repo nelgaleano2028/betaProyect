@@ -25,7 +25,9 @@ router.post('/', authMiddleware, checkRol(["admin"]), validatorCreateItem, creat
  */
 router.put('/:id', authMiddleware, validatorGetItem, validatorCreateItem, updateItem);
 
-// Eliminar un item
+/**
+ * Eliminar un item
+ */
 router.delete('/:id', authMiddleware, validatorGetItem, deleteItem);
 
 module.exports = router

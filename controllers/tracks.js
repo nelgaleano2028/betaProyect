@@ -2,7 +2,11 @@ const { matchedData } = require('express-validator');
 const { tracksModel } = require('../models');
 const { handleHttpError } = require('../utils/handleError');
 
-/*     OBTENER LISTADO DE REGISTROS     */
+/**
+ * OBTENER TODOS LOS REGISTROS
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getItems = async (req, res) => {
 
     try {
@@ -15,7 +19,11 @@ const getItems = async (req, res) => {
 };
 
 
-/*     OBTENER UN REGISTRO      */
+/**
+ * OBTENER UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getItem = async (req, res) => { 
     try {
         req = matchedData(req);
@@ -28,7 +36,11 @@ const getItem = async (req, res) => {
 };
 
 
-/*     CREAR UN REGISTRO        */
+/**
+ * CREAR UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const createItem = async (req, res) => {
     try {
         const body = matchedData(req); //matchedData obtiene los datos validados y saneados
@@ -40,7 +52,11 @@ const createItem = async (req, res) => {
 };
 
 
-/*     ACTUALIZAR UN REGISTRO       */
+/**
+ * ACTUALIZAR UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const updateItem = async (req, res) => { 
     console.log(req.body);
     try {
@@ -56,7 +72,11 @@ const updateItem = async (req, res) => {
 };
 
 
-/*     ELIMINAR UN REGISTRO         */
+/**
+ * ELIMINAR UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const deleteItem = async(req, res) => { 
     try {
         req = matchedData(req);

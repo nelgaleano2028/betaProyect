@@ -6,7 +6,11 @@ const { handleHttpError } = require('../utils/handleError');
 const PUBLIC_URL = process.env.PUBLIC_URL;
 const MEDIA_PATH = `${__dirname}/../storage`;
 
-/*    OBTENER LISTADO DE REGISTROS      */
+/**
+ * OBTENER LISTADO DE REGISTROS
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getItems = async (req, res) => {
     try {
         const data = await storageModel.find({});
@@ -17,7 +21,11 @@ const getItems = async (req, res) => {
 };
 
 
-/*    OBTENER UN REGISTRO          */
+/**
+ * OBTENER UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getItem = async (req, res) => {
     try {
         const { id } = matchedData(req);
@@ -29,7 +37,11 @@ const getItem = async (req, res) => {
 };
 
 
-/*    CREAR UN REGISTRO             */
+/**
+ * CREAR UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const createItem = async (req, res) => {
     try {
         const { body, file } = req;
@@ -45,7 +57,11 @@ const createItem = async (req, res) => {
 };
 
 
-/*    ELIMINAR UN REGISTRO          */
+/**
+ * ELIMINAR UN REGISTRO
+ * @param {*} req 
+ * @param {*} res 
+ */
 const deleteItem = async (req, res) => {
     try {
         const { id } = matchedData(req);

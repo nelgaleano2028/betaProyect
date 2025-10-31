@@ -10,7 +10,9 @@ const { validatorRegister, validatorLogin } = require('../validators/auth');
 router.post("/register", validatorRegister, registerCtrl);
 
 
-// INICIAR SESIÓN
+/**
+ * INICIA SESIÓN DE USUARIO
+ */
 router.post("/login", validatorLogin, loginCtrl);
 
 module.exports = router;
